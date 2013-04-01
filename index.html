@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Ernestine : a music management application</title>
+<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body style="width: 100%">
+<div id="header"><table cellspacing="0" cellpadding="0" width="100%"><tr>
+<td width="10"></td>
+<td valign="center"><b>Ernestine : a music management application</b></td>
+</tr></table></div>
+<div id="homepage" class="main">
+  <p>
+    Ernestine is a music management application written in Common Lisp.
+    It is developed on <a href="http://www.debian.org"> Debian GNU/Linux </a>, using 
+    <a href="http://www.sbcl.org"> SBCL </a>.
+  </p>
+  <p>
+    Ernestine was written
+    by <a href="mailto:nlamirault@gmail.com">Nicolas Lamirault</a> and is available 
+    under a <a href="http://www.opensource.org/licenses/mit-license.php"> MIT </a> 
+    style license.
+  </p>
+
+  <h3> Screenshots </h3>
+  <ul>
+    <li> Release 0.4 : 
+    <a href="img/ernestine-mcclim-0.4.png"> McClim </a> /
+    <a href="img/ernestine-web-0.4.png"> Web </a>
+    </li>
+    <li> Release 0.3 : 
+    <a href="img/ernestine-mcclim-0.4.png"> McClim </a> /
+    <a href="img/ernestine-web-0.4.png"> Web </a>
+    </li>
+  </ul>
+
+  <h3>Installation using asdf-install</h3>
+  <pre>*&gt; (require 'asdf-install)
+*&gt; (asdf-install:install 'ernestine) </pre>
+
+  <h3>Manual Installation</h3>
+
+  <p>
+    Download an Ernestine <a href="http://code.google.com/p/ernestine/downloads/list"> tarball</a> or
+    checkout source code from <a href="http://code.google.com/p/ernestine/source/checkout"> Google code </a>.
+  </p>
+  <p>
+    Ernestine needs
+    <a href="http://www.cliki.net/SPLIT-SEQUENCE">split-sequence</a>,
+    <a href="http://common-lisp.net/project/cl-prevalence/">cl-prevalence</a>,
+    <a href="http://weitz.de/cl-ppcre/">cl-ppcre</a>,
+    <a href="http://www.weitz.de/drakma/">Drakma</a>, 
+  </p>
+  <p>
+    The McClim frontend needs :
+    <a href="http://common-lisp.net/project/mcclim/">mcclim</a>
+    <a href="http://common-lisp.net/project/mcclim/">mcclim-truetype</a>
+    <a href="http://common-lisp.net/project/mcclim/">mcclim-jpeg-bitmaps</a>
+    <a href="http://common-lisp.net/project/mcclim/">mcclim-gif-bitmaps</a>
+    <a href="http://www.nicklevine.org/cl-log/">cl-log</a>
+    <a href="http://code.google.com/p/cl-xspf/">cl-xspf</a>
+    <a href="http://code.google.com/p/cl-audioscrobbler/">cl-audioscrobbler</a>
+  </p>
+  <p>
+    The web frontend needs :
+    <a href="http://weitz.de/hunchentoot/">hunchentoot</a>
+    <a href="http://weitz.de/html-template/">html-template</a>
+    <a href="http://code.google.com/p/cl-xspf/">cl-xspf</a>
+  </p>   
+    and their dependencies.
+  <p>
+    <a href="http://www.cliki.net/asdf">ASDF</a> is used for
+    compilation.  Register the .asd file, e.g. by symlinking it,
+    then compile ernestine using <tt>asdf:operate</tt>.
+  </p>
+  <pre>$ ln -sf `pwd`/ernestine-*.asd /path/to/your/registry/
+* (asdf:operate 'asdf:load-op :ernesine-[backend])</pre>
+
+  <h3>Usage</h3>
+  <p>
+    Please refer to the <a href="api/index.html">API documentation</a>.
+There is also a <a href="api/documentation.pdf"> PDF </a> version of the API.
+  </p>
+
+  <h3>Support</h3>
+  Mail Nicolas Lamirault for questions, bug reports, ...
+
+  <h3>News</h3>
+  <p><b>2009-03-03</b></p>
+   <ul><li>Creates a new website.</li></ul>
+  <p><b>2007-09-20</b></p>
+  <ul>
+    <li>
+      Add McClim Tab layout into the player. Implements playlists management and web site modification.
+    </li>
+  </ul>
+  <p><b>2007-08-11</b></p>
+  <ul>
+    <li>
+      Release 0.3. First public release.
+    </li>
+  </ul>
+  <p><b>2007-05-08</b></p>
+  <ul>
+    <li>
+      Release 0.2 : Bugfix and support of a sort of playlist.
+    </li>
+  </ul>
+  <p><b>2007-07-26</b></p>
+  <ul>
+    <li>
+      Release 0.1. Alpha version. You could scan a directory searching MP3 / Ogg Vorbis files, and you could launch the GUI to play music.
+    </li>
+  </ul>
+
+
+  <h3>Releases</h3>
+  <p>
+     <b>0.4</b>
+     <a href="http://ernestine.googlecode.com/files/ernestine-0.4.tar.gz">tgz</a>
+     <a href="http://ernestine.googlecode.com/files/ernestine-0.4.tar.gz.asc">asc</a>
+   </p>
+  <p>
+     <b>0.3</b>
+     <a href="http://ernestine.googlecode.com/files/ernestine-0.3.tar.gz">tgz</a>
+     <a href="http://ernestine.googlecode.com/files/ernestine-0.3.tar.gz.asc">asc</a>
+   </p>
+  <p>
+     <b>0.2</b>
+     <a href="http://ernestine.googlecode.com/files/ernestine-0.2.tar.gz">tgz</a>
+     <a href="http://ernestine.googlecode.com/files/ernestine-0.2.tar.gz.asc">asc</a>
+   </p>
+   <p>
+     <b>0.1</b>
+     <a href="http://ernestine.googlecode.com/files/ernestine-0.1.tar.gz">tgz</a>
+     <a href="http://ernestine.googlecode.com/files/ernestine-0.1.tar.gz.asc">asc</a>
+   </p>
+
+</div>
+</body>
+</html>
