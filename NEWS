@@ -1,0 +1,111 @@
+---------------
+-- ernestine --
+---------------
+
+* Last.FM / Audioscrobbler *
+  Implements Last.FM support. With a Last.fm account, Ernestine send requests
+  to Last.fm about listened music.
+
+** Version 0.4 **
+
+* File Selector *
+  Implements a new file selector.
+
+* Read/Write playlists *
+  Ernestine could save a playlist in a XSPF format and load it.
+
+* Dynamic playlists *
+  Add a feature to creates dynamic playlist based on the music genre.
+
+* Shuffle *
+  A new command 'c-z' could be used to set/unset the Shuffle mode when
+  reading playlist.
+
+* Tab *
+  Ernestine supports the McCLIM's tab layout.
+
+* Playlist addons *
+  C-a add to the playlist current song, or current album or all albums
+  for the selected artist.
+
+
+
+** Version 0.3 **
+
+* Web radio *
+  Update the  web site  and the Flash  player. XSPF playlist  could be
+  generates using single artist or album.
+
+* Unit Tests *
+  Use Lift framework to creates some unit tests. Implements some tests
+  for the database backend.
+
+* cl-xspf *
+  Use cl-xspf to generates a playlist.
+
+* Split modules *
+  Creates 3 modules : ernestine, ernestine-gui and ernestine-web.
+
+* Web radio *
+  Modify  the web  packages to  use Hunchentoot  as a  web  server and
+  musicplayer as Flash music player.
+
+
+
+** Version 0.2 **
+
+* Shuffle
+  It is possible to randomly organizes the playlist.
+
+* Sound volume
+  Manage sound volume by using 'aumix'.
+
+* Playlist
+  Implements system to add current selection to a system of playlist.
+
+* Display of current selection
+  Modification of display  to put in evidence selected artist, album
+  and song.
+
+* Keystrokes
+  Add keystrokes for next and previous song in selected album
+
+* Continuation
+  Player iterates all over songs of an album
+
+* Music command
+  Add music command : play, stop, previous and next
+
+
+
+** Version 0.1 **
+
+* Ogg Vorbis
+  Add support for Ogg Vorbis file, using 'ogginfo' program
+
+* Player
+  Add a McClim music player
+
+* Music management
+  Add tools to scan directory and updates music database
+
+* Fronted
+  Correct frontend by using backend's api
+
+* Frontend
+  Make a  web frontend which  display music group, and  group's album,
+  and songs. Use mod_lisp and tbnl.
+
+* Backend
+  Use cl-prevalence for default backend.
+
+* Objects
+  Create  differents objects  structure representing  music components
+  (group, album and song).
+
+
+
+Local variables:
+mode: outline
+paragraph-separate: "[  ^L]*$"
+end:

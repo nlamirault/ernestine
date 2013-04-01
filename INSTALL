@@ -1,0 +1,70 @@
+---------------
+-- ernestine --
+---------------
+
+* Required softwares *
+
+  You will need :
+
+  - asdf : http://www.cliki.net/asdf
+  - s-xml : http://common-lisp.net/project/s-xml
+  - cl-prevalence : http://common-lisp.net/project/cl-prevalence
+  - split-sequence : http://www.cliki.net/split-sequence 
+  - hunchentoot : http://weitz.de/hunchentoot/
+  - html-template : http://weitz.de/html-template/
+  - mp3info : http://www.ibiblio.org/mp3info/
+  - ogginfo : http://www.xiph.org/downloads/
+  - sox : http://sox.sourceforge.net/
+  - aumix : http://www.jpj.net/~trevor/aumix.html
+
+* ASDF *
+
+  In /usr/share/common-lisp/systems, create a symbolic link
+  to the system definition file (ernestine.asd)
+  or
+  add the ernestine directory to *central-directory* of ASDF :
+  (push "/directory/ernestine/" asdf:*central-registry*)
+
+* Load *
+
+  In the Lisp system :
+  (asdf:operate 'asdf:load-op 'ernestine)
+
+* Unit Tests *
+
+  In the Lisp system :
+
+  (asdf:operate 'asdf:load-op 'ernestine-tests)
+
+  (ernestine-tests:run-ernestine-tests
+      "/directory/ernestine/etc/lift.conf")
+
+* Apache configuration *
+
+  Install apache + mod_lisp
+  Add this to the httpd.conf :
+
+  LispServer 127.0.0.1 3001 "ernestine"
+  <Location /ernestine>
+            SetHandler lisp-handler
+  </Location>
+
+* Launch web frontend *
+
+  (ernestine-database:with-backend (backend :prevalence "/tmp/")
+           (ernestine-web:web-start backend
+                                  "/usr/local/src/ernestine/src/web/html/"
+                                  3001))
+
+  Then you can use the web frontend : http://localhost/ernestine/index
+
+* Launch GUI *
+
+ CL-USER> (ernestine-gui:player)
+
+
+
+Local variables:
+mode: outline
+paragraph-separate: "[  ^L]*$"
+end:

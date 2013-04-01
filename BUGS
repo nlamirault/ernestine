@@ -1,0 +1,11 @@
+---------------
+-- Ernestine --
+---------------
+
+
+- list-directory
+  Problem with name which contains é, à, ...
+
+- Macros for the database : do-***
+  Use gensym to make the local names of the variable.
+

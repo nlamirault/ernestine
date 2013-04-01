@@ -1,0 +1,33 @@
+;;; configuration for LIFT tests
+
+;; settings
+(:if-dribble-exists :supersede)
+(:dribble "lift.dribble")
+(:print-length 10)
+(:print-level 5)
+(:print-test-case-names t)
+
+;; suites to run
+(ernestine-database-test)
+
+;; report properties
+(:report-property :title "LIFT | Test results")
+(:report-property :relative-to lift-test)
+
+(:report-property :style-sheet "test-style.css")
+(:report-property :if-exists :supersede)
+(:report-property :format :html)
+(:report-property :name "ernestine/test-results/test-report.html")
+(:report-property :unique-name t)
+(:build-report)
+(:report-property :name "ernestine/output/test-report.html")
+(:report-property :unique-name nil)
+(:build-report)
+
+(:report-property :format :turtle)
+(:report-property :name "ernestine/test-report.n3")
+(:build-report)
+
+(:report-property :format :describe)
+(:report-property :full-name *standard-output*)
+(:build-report)

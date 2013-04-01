@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-15"/>
+<title> <!-- TMPL_VAR title --> </title>
+
+<link rel="stylesheet" type="text/css" href="/ernestine-radio/css/ernestine.css" />
+
+<script language="JavaScript">
+<!--
+
+
+function select_artist() {
+  var artist = document.ernestine.authors[document.ernestine.authors.selectedIndex].value
+  //alert("artist " + artist);
+  document.ernestine.artist_name.value=artist;
+  document.ernestine.submit();
+}
+
+
+function select_album() {
+  var artist = document.ernestine.authors[document.ernestine.authors.selectedIndex].value
+  var album = document.ernestine.albums[document.ernestine.albums.selectedIndex].value
+  //alert("artist " + artist + " album " + album);
+  document.ernestine.artist_name.value=artist;
+  document.ernestine.album_name.value=album;
+  document.ernestine.submit();
+}
+
+
+function select_genre() {
+  var genre = document.ernestine.genres[document.ernestine.genres.selectedIndex].value
+  //alert("genre " + genre);
+  document.ernestine.genre_name.value=genre;
+  document.ernestine.submit();
+}
+
+
+
+//-->
+
+</script>
+
+</head>
+
+<body>
+
+
+<div id="main">
+
+<b class="rtop">
+  <b class="r1"></b>
+  <b class="r2"></b>
+  <b class="r3"></b>
+  <b class="r4"></b>
+</b>
+
+
+<div id="header">
+<a href="http://www.lisperati.com/logo.html">
+  <img src="/ernestine-radio/img/lisp-flag-with-hand.gif" style="border: none" alt="Made with Common Lisp"/>
+</a>
+<span class="title"> <!-- TMPL_VAR title --> </span>
+<span class="version"> <!-- TMPL_VAR version --> </span>
+</div>
+
+
+<form name="ernestine">
+
+<input type="hidden" name="artist_name" value="">
+<input type="hidden" name="album_name" value="">
+<input type="hidden" name="genre_name" value="">
+
+<div id="data">
+
+  <span id="author">
+  <select name="authors" onchange="javascript:select_artist();">
+    <option value=""> Artists </option>
+    <!-- TMPL_LOOP artists -->
+    <option value="<!-- TMPL_VAR name -->" <!-- TMPL_VAR selected -->>
+      <!-- TMPL_VAR name -->
+    </option>
+    <!-- /TMPL_LOOP -->
+  </select>
+  </span>
+
+  <span id="album">
+  <select name="albums" onchange="javascript:select_album();">
+    <option value=""> Albums </option>
+    <!-- TMPL_LOOP albums -->
+    <option value="<!-- TMPL_VAR name -->" <!-- TMPL_VAR selected -->>
+      <!-- TMPL_VAR name -->
+    </option>
+    <!-- /TMPL_LOOP -->
+  </select>
+  </span>
+
+  <span id="genre">
+  <select name="genres" onchange="javascript:select_genre();">
+    <option value=""> Genres </option>
+    <!-- TMPL_LOOP genres -->
+    <option value="<!-- TMPL_VAR name -->" <!-- TMPL_VAR selected -->>
+      <!-- TMPL_VAR name -->
+    </option>
+    <!-- /TMPL_LOOP -->
+  </select>
+  </span>
+
+
+</div>
+
+</form>
+
+<div id="player">
+  
+<object type="application/x-shockwave-flash" width="400" height="170"
+        data="/ernestine-radio/html/xspf_player.swf?playlist_url=/ernestine-radio/playlist/<!-- TMPL_VAR playlist -->&autoresume=1&autoplay=1">
+
+</div>
+
+
+
+<b class="rbottom">
+  <b class="r4"></b>
+  <b class="r3"></b>
+  <b class="r2"></b>
+  <b class="r1"></b>
+</b>
+
+
+</div>
+
+
+</body>
+</html>
