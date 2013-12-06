@@ -1,6 +1,9 @@
 Ernestine
 =========
 
+[![Build Status](https://travis-ci.org/nlamirault/ernestine.png)](https://travis-ci.org/nlamirault/ernestine)
+
+
 Ernestine is a music management application.
 see INSTALL file for more explanations.
 
