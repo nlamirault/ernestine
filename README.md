@@ -1,7 +1,7 @@
 Ernestine
 =========
 
-[![Build Status](https://travis-ci.org/nlamirault/ernestine.png)](https://travis-ci.org/nlamirault/ernestine)
+[![Build Status](http://img.shields.io/travis/nlamirault/ernestine.svg)](https://travis-ci.org/nlamirault/ernestine)
 
 
 Ernestine is a music management application.
