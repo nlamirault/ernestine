@@ -9,5 +9,4 @@
 (ql:quickload "ernestine")
 (ql:quickload "ernestine-tests")
 
-(ernestine-tests:run-ernestine-tests)
-
+(lisp-unit:run-tests :all :ernestine-tests)
