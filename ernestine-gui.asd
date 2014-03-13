@@ -29,7 +29,8 @@
   :depends-on (:mcclim
                :cl-log
                :cl-xspf
-               :cl-audioscrobbler
+	       ;; FIXME: upgrade to cl-lastfm
+               ;;:cl-audioscrobbler
                :ernestine)
   :components
   ((:module :lib
@@ -56,4 +57,3 @@
                                                     "playlist"))
                        (:file "commands" :depends-on ("player"))
                        ))))))
-

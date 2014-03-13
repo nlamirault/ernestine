@@ -13,6 +13,12 @@ see INSTALL file for more explanations.
 
 ## McCLim Player
 
+### Dependencies
+
+Install theses packages :
+
+    $ sudo apt-get install mp3info aumix mplayer
+
 ### Launch the mcclim frontend
 
     CL-USER> (asdf:oos 'asdf:load-op :ernestine-gui)

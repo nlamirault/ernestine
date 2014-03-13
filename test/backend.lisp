@@ -115,7 +115,11 @@
 				     album-name
 				     "rock" "2007" nil nil)
       (let ((data
-	     (ernestine-database:make-song backend artist-name album-name song-name "1" "25" "foo.mp3")))
+	     (ernestine-database:make-song backend
+					   artist-name
+					   album-name
+					   song-name
+					   "1" "25" "foo.mp3")))
 	(assert-true (eq (type-of data) 'ernestine-database:song))))))
 
 

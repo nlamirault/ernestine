@@ -64,41 +64,24 @@
     (format nil "~4,'0d-~2,'0d-~2,'0d-~2,'0d-~2,'0d-~2,'0d"
             year month date hour minute second)))
 
-
-;; FIXME : last log message error :
-;; in: LAMBDA NIL
-;;     (FORMAT NIL "[Last.fm] ~A" ERNESTINE-GUI:: CONDITION)
-;; 
-;; caught WARNING:
-;;   undefined variable:  CONDITION
-;; 
-;; caught WARNING:
-;;   This variable is undefined:
-;;      CONDITION
-;; 
-;; compilation unit finished
-;;   caught 2 WARNING conditions
 (defun send-last-fm (artist album song)
   "Send SONG's informations to LAST.FM."
   (cl-log:log-message :info "[Last.FM] ~A~%"
                       ;;(artist-name artist)
                       ;;(album-name album)
                       (song-title song))
-  (handler-case
-      (cl-audioscrobbler:post-song *last-fm*
-                                   :1.1
-                                   (artist-name artist)
-                                   (album-name album)
-                                   (song-title song)
-                                   "300" "25")
-     (cl-audioscrobbler:audioscrobbler-protocol-error (condition)
-       (format t "Error ~A~%" condition)
-       (cl-log:log-message :error
-                           (format nil "[Last.fm] Protocol error ~A" condition)))
-     (simple-error (condition)
-       (format t "Error ~A~%" condition)
-;;         (cl-log:log-message :error
-;;                             (format nil "[Last.fm] ~A" condition)))))
-       )))
-
-
+  ;; (handler-case
+  ;;     (cl-audioscrobbler:post-song *last-fm*
+  ;;                                  :1.1
+  ;;                                  (artist-name artist)
+  ;;                                  (album-name album)
+  ;;                                  (song-title song)
+  ;;                                  "300" "25")
+  ;;    (cl-audioscrobbler:audioscrobbler-protocol-error (condition)
+  ;;      (format t "Error ~A~%" condition)
+  ;;      (cl-log:log-message :error
+  ;;                          (format nil "[Last.fm] Protocol error ~A" condition)))
+  ;;    (simple-error (condition)
+  ;;      (format t "Error ~A~%" condition)
+  ;;      )))
+  )

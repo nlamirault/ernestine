@@ -46,12 +46,13 @@ LAST-FM-ACCOUNT is a (login . password) informations about a Last.fm account."
   (when (check-installation)
     (let ((home (get-ernestine-directory)))
       (init-log home)
-      (when last-fm-account
-        (setf *last-fm*
-              (cl-audioscrobbler:make-client (car last-fm-account)
-                                             (cdr last-fm-account)
-                                             +cl-audioscrobbler-client-id+
-                                             +cl-audioscrobbler-client-version+)))
+      ;; FIX: upgrade to cl-lastfm
+      ;; (when last-fm-account
+      ;;   (setf *last-fm*
+      ;;         (cl-audioscrobbler:make-client (car last-fm-account)
+      ;;                                        (cdr last-fm-account)
+      ;;                                        +cl-audioscrobbler-client-id+
+      ;;                                        +cl-audioscrobbler-client-version+)))
       (cl-log:log-message :info "[Start] Ernestine ...~%")
       (start-player (ernestine-database:get-backend :prevalence home))))
     0) ;; for sb-executable
@@ -416,7 +417,7 @@ previous song on the artist's album, and starts to play it."
                     songs)))
          adjust-third
          (clim:labelling (:label "Playlist")
-           selection)        
+           selection)
          info))
    (minimal
     (clim:vertically (:equalize-width nil :equalize-height nil)
@@ -520,7 +521,7 @@ previous song on the artist's album, and starts to play it."
 
 
 ;; --------
-;; Display 
+;; Display
 ;; --------
 
 
@@ -658,6 +659,3 @@ and uses this results for executes BODY which present ELEM."
                 (clim:present song 'song
                               :stream stream
                               :view (make-instance 'playlist-view))))))))
-                              
-          
-
