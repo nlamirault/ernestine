@@ -18,39 +18,18 @@
 ;;;; *************************************************************************
 
 
-(in-package #:cl-user)
-
-
-(defpackage #:ernestine-tests-system 
-  (:use #:cl #:asdf))
-
-
-(in-package #:ernestine-tests-system)
-
-
-
-(defsystem ernestine-tests
+(asdf:defsystem #:ernestine-tests
   :name "ernestine-tests"
   :author "Nicolas Lamirault <lam@tuxfamily.org>"
   :version "0.4"
   :licence "Lisp Lesser GNU General Public License"
   :description "Ernestine Unit Tests"
-  :depends-on (:ernestine :lift)
+  :depends-on (#:ernestine
+               #:lisp-unit)
+  :serial t
   :components
   ((:module :test
             :components
-            ((:module :backend
-                      :components
-                      ((:file "package")
-                       (:file "prevalence" :depends-on ("package"))
-                       (:file "suite" :depends-on ("prevalence"))
-                       ))
-             (:file "package")
-             (:file "suite" :depends-on ("package" :backend))
+	    ((:file "package")
+	     (:file "backend" :depends-on ("package"))
              ))))
-             
-
-
-
-
-

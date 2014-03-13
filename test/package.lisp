@@ -16,8 +16,6 @@
 ;;;; *************************************************************************
 
 
-(defpackage :ernestine-tests
-  (:use :cl)
-  (:documentation "Unit Tests for Ernestine.")
-  (:export #:run-ernestine-tests))
-
+(defpackage #:ernestine-tests
+  (:use #:cl
+        #:lisp-unit))
